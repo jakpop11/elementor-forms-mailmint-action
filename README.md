@@ -29,7 +29,7 @@
 - [x] Set List that subscriber will be added to
 - [x] Set Tag that subscriber will be assigned to
 - [ ] Set subscriber name with additional Elementor form fields
-- [ ] Set subscriber meta data (localisation, phone no.) with additional Elementor form fields
+- [ ] Set subscriber meta data (localization, telephone number) with additional Elementor form fields
 
 
 ### Used technology:
