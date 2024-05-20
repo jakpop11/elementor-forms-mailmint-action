@@ -12,7 +12,7 @@
       <li><a href="#Requirements">Requirements</a></li>
     </ul>
     <li><a href="#Installation">Installation</a></li>
-    <li><a href="#How-to-use">How to use?</a></li>
+    <li><a href="#How-to-use">How to use</a></li>
     <li><a href="#License">License</a></li>
   </ol>
 </details>
