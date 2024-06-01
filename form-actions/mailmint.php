@@ -96,6 +96,7 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		$fname_field = 'first_name';
 		$lname_field = 'last_name';
 		$phone_field = 'phone';
+		$country_field = 'country';
 
         $settings = $record->get('form_settings');
 
@@ -126,8 +127,8 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
             'lists'      => $lists,       // list ids as an array
             'tags'       => $tags,          // tag ids as an array
 			'meta_fields' => [
-				//'country' => 'United States (US)',
-				'phone_number' => $fields[$phone_field]
+				'country' => $fields[$country_field],	// use select field with countries list
+				'phone_number' => $fields[$phone_field]	// use Tel field
 			]
         ];		
 		
