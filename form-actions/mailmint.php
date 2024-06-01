@@ -91,6 +91,12 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 	 * @param \ElementorPro\Modules\Forms\Classes\Ajax_Handler $ajax_handler
 	 */
     public function run($record, $ajax_handler){
+		// Fields IDs
+		$email_field = 'email';
+		$fname_field = 'first_name';
+		$lname_field = 'last_name';
+		$phone_field = 'phone';
+
         $settings = $record->get('form_settings');
 
         // Get submitted form data.
@@ -103,7 +109,7 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		}
 
         // Make sure the user entered an email.
-		if ( empty( $fields['email'] ) ) {
+		if ( empty( $fields[$email_field] ) ) {
 			return;
 		}
 
@@ -113,10 +119,16 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 
 		// Create / Update single contact based on MailMint Api: https://developers.getwpfunnels.com/hooks/create_contact_api.html#create-update-single-contact
         $contact = [
-            'email'      => $fields['email'],	// required
+            'email'      => $fields[$email_field],	// required
+			'first_name' => $fields[$fname_field],	
+			'last_name'  => $fields[$lname_field],
             'status'     => 'pending',         // subscribed/pending/unsubscribed
             'lists'      => $lists,       // list ids as an array
             'tags'       => $tags,          // tag ids as an array
+			'meta_fields' => [
+				//'country' => 'United States (US)',
+				'phone_number' => $fields[$phone_field]
+			]
         ];		
 		
 		// Creates single contact
