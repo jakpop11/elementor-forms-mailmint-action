@@ -19,8 +19,9 @@
 
 
 ## About project
-<!-- ![Screenshot](/screenshots/img.jpg?raw=true "Title") -->
 **Elementor Forms MailMint Action** is a WordPress plugin designed to seamlessly integrate Elementor forms with MailMint. This plugin enables you to automatically add new subscribers to your MailMint mailing lists every time an Elementor form is submitted on your site. By bridging the gap between your forms and your email marketing efforts, this addon streamlines the process of growing your subscriber base and enhances your email marketing strategy.
+
+![ActionAfterSubmitSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/2e6e717b-3f1e-455c-96cd-36660f9ae941)
 
 
 ### Features:
@@ -63,6 +64,24 @@
 5. In new menu - MailMint, enter needed data - list id, tag id (you can find those innspecting MailMint dashboard with your browser)
 6. Save and publish form. After that you should be able to subscribe to MailMint list with this Elementor form
 
+<details>
+  <summary>How to get list id</summary>
+  
+  ![HowToGetListId](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/9a28e7dd-d6ea-4132-8b0b-12ea5551b681)  
+  ![ActionAfterSubmitSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/2e6e717b-3f1e-455c-96cd-36660f9ae941)
+</details>
+
+<details>
+  <summary>How to setup field id</summary>
+  
+  ![FormFieldid](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/446df486-8c0f-4668-b109-29a76c1fa440)
+</details>
+
+<details>
+  <summary>How to setup country field</summary>
+
+  ![CountryFieldSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/34d6fe9f-7ab1-4fd2-9b5c-6da8b8568993)
+</details>
 
 <details>
   <summary>List of Countries</summary>
