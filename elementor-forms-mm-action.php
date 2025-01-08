@@ -3,15 +3,16 @@
  * Plugin Name: Elementor Forms MailMint Action
  * Description: Custom addon which adds new subscriber to MailMint after form submission.
  * Plugin URI:  https://github.com/jakpop11/elementor-forms-mailmint-action
- * Version:     1.2.0
+ * Version:     1.2.1
  * Author:      Jackob
  * Author URI:  https://github.com/jakpop11
  * Text Domain: elementor-forms-mm-action
  *
  * Requires Plugins: elementor, mail-mint
- * Elementor tested up to: 3.21.0
- * Elementor Pro tested up to: 3.21.0
- * MailMint tested up to: 1.11.1
+ * Elementor tested up to: 3.26.4
+ * Elementor Pro tested up to: 3.26.4
+ * MailMint tested up to: 1.16.4
+ * WordPress tested up to: 6.7.1
  */
 
  if( ! defined('ABSPATH')){

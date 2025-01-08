@@ -156,7 +156,7 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		// Creates single contact
         $contact_id = mailmint_create_single_contact( $contact );
 
-		// Trigger MailMint form submittion if MailMint form id was set based on other use in MaiMint code
+		// Trigger MailMint form submission if MailMint form id was set based on other use in MaiMint code
 		if (!is_null($forms)) {
 			do_action('mailmint_after_form_submit', $forms, $contact_id, new ContactData($contact['email'], null) );
 		}
