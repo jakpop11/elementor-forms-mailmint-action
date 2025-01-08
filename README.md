@@ -76,7 +76,7 @@
   <summary>How to get list id</summary>
   
   ![HowToGetListId](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/9a28e7dd-d6ea-4132-8b0b-12ea5551b681)  
-  ![ActionAfterSubmitSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/2e6e717b-3f1e-455c-96cd-36660f9ae941)
+  ![ActionAfterSubmitSetup](https://github.com/user-attachments/assets/c7bfbbe7-22f6-43f7-ae7a-ce416f93dac6)
 </details>
 
 <details>
