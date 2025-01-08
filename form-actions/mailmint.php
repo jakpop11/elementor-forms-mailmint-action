@@ -3,6 +3,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
+/**
+ * MailMint references
+ * 
+ * @since 1.2.0
+ */
+use MRM\Common\MrmCommon;
+use Mint\MRM\DataStores\ContactData;
+
 /**
  * Elementor form MailMint action.
  *
@@ -77,6 +86,16 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
             ]
         );
 
+		$widget->add_control(
+			'mm_form_id',
+			[
+                'label' => esc_html__( 'Form ID', 'elementor-forms-mm-action' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'placeholder' => 'e.g.: 1',
+				'description' => esc_html__( 'Enter the ID of the MailMint form you want connect as a trigger.', 'elementor-forms-mm-action' ),
+            ]
+		);
+
         $widget->end_controls_section();
     }
 
@@ -117,13 +136,15 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		// Get list and tag ids as an array or empty array
 		$lists = empty($settings['mm_list_id']) ? [] : [ $settings['mm_list_id'] ];
 		$tags = empty($settings['mm_tag_id']) ? [] : [ $settings['mm_tag_id'] ];
+		// Get form id value or null
+		$forms = empty($settings['mm_form_id']) ? null : $settings['mm_form_id'];
 
 		// Create / Update single contact based on MailMint Api: https://developers.getwpfunnels.com/hooks/create_contact_api.html#create-update-single-contact
         $contact = [
             'email'      => $fields[$email_field],	// required
 			'first_name' => $fields[$fname_field],	
 			'last_name'  => $fields[$lname_field],
-            'status'     => 'pending',         // subscribed/pending/unsubscribed
+            'status'     => MRMCommon::is_double_optin_enable() ? 'pending' : 'subscribed',         // subscribed/pending/unsubscribed
             'lists'      => $lists,       // list ids as an array
             'tags'       => $tags,          // tag ids as an array
 			'meta_fields' => [
@@ -135,6 +156,10 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		// Creates single contact
         $contact_id = mailmint_create_single_contact( $contact );
 
+		// Trigger MailMint form submission if MailMint form id was set based on other use in MaiMint code
+		if (!is_null($forms)) {
+			do_action('mailmint_after_form_submit', $forms, $contact_id, new ContactData($contact['email'], null) );
+		}
     }
 
     /**
@@ -151,6 +176,7 @@ class MailMint_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\A
 		unset(
 			$element['mm_list_id'],
             $element['mm_tag_id'],
+			$element['mm_form_id'],
 		);
 
 		return $element;

@@ -21,7 +21,7 @@
 ## About project
 **Elementor Forms MailMint Action** is a WordPress plugin designed to seamlessly integrate Elementor forms with MailMint. This plugin enables you to automatically add new subscribers to your MailMint mailing lists every time an Elementor form is submitted on your site. By bridging the gap between your forms and your email marketing efforts, this addon streamlines the process of growing your subscriber base and enhances your email marketing strategy.
 
-![ActionAfterSubmitSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/2e6e717b-3f1e-455c-96cd-36660f9ae941)
+![ActionAfterSubmitSetup](https://github.com/user-attachments/assets/c7bfbbe7-22f6-43f7-ae7a-ce416f93dac6)
 
 
 ### Features:
@@ -31,6 +31,7 @@
 - [x] Set Tag that subscriber will be assigned to
 - [x] Set subscriber name with additional Elementor form fields
 - [x] Set subscriber meta data (localization, telephone number) with additional Elementor form fields
+- [x] Trigger `mailmint_after_form_submit` after Elementor form with custom action submission
 
 
 ### Used technology:
@@ -43,9 +44,9 @@
 
 ### Requirements:
 <ul>
-  <li><a href="https://wordpress.org/plugins/elementor/">Elementor PRO</a> (tested up to: 3.21.0)</li>
-  <li><a href="https://wordpress.org/plugins/mail-mint/">MailMint</a> (tested up to: 1.11.1)</li>
-  <li><a href="https://wordpress.org/">WordPress</a> (tested up to: 6.5.3)</li>
+  <li><a href="https://wordpress.org/plugins/elementor/">Elementor PRO</a> (tested up to: 3.26.4)</li>
+  <li><a href="https://wordpress.org/plugins/mail-mint/">MailMint</a> (tested up to: 1.16.4)</li>
+  <li><a href="https://wordpress.org/">WordPress</a> (tested up to: 6.7.1)</li>
 </ul>
 
 
@@ -61,20 +62,41 @@
 2. In E-mail field advance settings set id to `email`
 3. [OPTIONAL] Repeat step #2 for other fields by setting the following IDs: `first_name`, `last_name`, `phone`, and `country`. For a better user experience, set the phone field type to **Tel**, and the country field type to **select**. For the country select field options, you can use the list of countries provided below.
 4. In Action After Submit menu add `MailMint` action
-5. In new menu - MailMint, enter needed data - list id, tag id (you can find those innspecting MailMint dashboard with your browser)
+5. In new menu - MailMint, enter data as needed - list id, tag id (you can find those innspecting MailMint dashboard with your browser)
 6. Save and publish form. After that you should be able to subscribe to MailMint list with this Elementor form
+
+[OPTIONAL] Trigger action after form is submitted
+1. Create default form and give it descriptive name (e.g. "NewsletterForm"). Publish and activate form
+2. Copy created MailMint form id from shortcode section (e.g.: "1") 
+3. In Elementor form under MailMint, enter copied MailMint form id in the form id field. Publish changes
+4. Setup MailMint Automation using `Form Submitted` trigger and selecting name of MailMint form (e.g. "NewsletterForm")
+5. Publish and activate automation
 
 <details>
   <summary>How to get list id</summary>
   
   ![HowToGetListId](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/9a28e7dd-d6ea-4132-8b0b-12ea5551b681)  
-  ![ActionAfterSubmitSetup](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/2e6e717b-3f1e-455c-96cd-36660f9ae941)
+  ![ActionAfterSubmitSetup](https://github.com/user-attachments/assets/c7bfbbe7-22f6-43f7-ae7a-ce416f93dac6)
+</details>
+
+<details>
+  <summary>How to get form id</summary>
+
+  ![HowToGetFormId](https://github.com/user-attachments/assets/7ca94918-799a-4a4a-b34b-cff94f99e07f)
+  ![ActionAfterSubmitSetup](https://github.com/user-attachments/assets/c7bfbbe7-22f6-43f7-ae7a-ce416f93dac6)
 </details>
 
 <details>
   <summary>How to setup field id</summary>
   
   ![FormFieldid](https://github.com/jakpop11/elementor-forms-mailmint-action/assets/104214436/446df486-8c0f-4668-b109-29a76c1fa440)
+</details>
+
+<details>
+  <summary>How to setup MailMint Automation</summary>
+  
+  ![AutomationSetup](https://github.com/user-attachments/assets/a11220c6-e4bd-495c-94c1-118beda405d2)
+  ![HowToGetFormId](https://github.com/user-attachments/assets/7ca94918-799a-4a4a-b34b-cff94f99e07f)
 </details>
 
 <details>
